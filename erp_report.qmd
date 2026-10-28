@@ -46,7 +46,7 @@ Use appropriate subheadings as required: adapt the ones below, create new ones o
 
 ## Methods
 
-Complete the following subsections using the information from @kappenman2021. Don't forget to mention that the data are from the ERP CORE resource under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). 
+Complete the following subsections using the information from @kappenman_ERP_Core_2021. Don't forget to mention that the data are from the ERP CORE resource under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). 
 
 ### Participants
 
@@ -67,7 +67,7 @@ Describe the EEG recording parameters: amplifier and type of cap used, electrode
 
 ### Analysis parameters
 
-Choose these parameters appropriate for the component that you are analysing. Use those recommended by @kappenman2021; see their Table 1. This holds for all parameters except for the filter parameters; for these, you can stick to the example parameters provided below.
+Choose these parameters appropriate for the component that you are analysing. Use those recommended by @kappenman_ERP_Core_2021; see their Table 1. This holds for all parameters except for the filter parameters; for these, you can stick to the example parameters provided below.
 Describe the parameters in this section and also modify the code accordingly
 
 #### Preprocessing parameters
@@ -186,9 +186,9 @@ for cond in CONDITIONS:
 
 ### Grand average: expected effect
 
-Plot the electrode deemed most representative for the effect by @kappenman2021.
+Plot the electrode deemed most representative for the effect by @kappenman_ERP_Core_2021.
 Set the parameters for the specified analysis window, which will include dotted vertical lines marking the analysis window on the plot.
-Note: for some components, @kappenman2021 refer to two electrode sites. If this is the case for your chosen component, the analysis requires a consideration of lateralisation; please make an appointment to discuss the required analysis tweaks with Ina.
+Note: for some components, @kappenman_ERP_Core_2021 refer to two electrode sites. If this is the case for your chosen component, the analysis requires a consideration of lateralisation; please make an appointment to discuss the required analysis tweaks with Ina.
 
 ```{python}
 selected_electrode = "CPz"
@@ -203,7 +203,7 @@ plot_evokeds(grand_avs, picks = selected_electrode, invert_y = True, title = plo
 
 ## Discussion and reflection
 
-Provide a brief discussion of the effect that you observed. Were you able to replicate the ERP component as observed by @kappenman2021? If not, what was different in your grand average ERP? 
+Provide a brief discussion of the effect that you observed. Were you able to replicate the ERP component as observed by @kappenman_ERP_Core_2021? If not, what was different in your grand average ERP? 
 
 What did you learn by applying the analysis process to a new dataset?
 
