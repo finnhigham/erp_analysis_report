@@ -37,16 +37,15 @@ PROCESSED_PATH = Path("data/processed")
 
 ## Introduction
 
-Provide an introduction to the ERP component of your choice here. This should include a brief literature review -- see report instructions for details.
-Use appropriate subheadings as required: adapt the ones below, create new ones or delete as needed.
-
-### Description of N400's Characteristics
+The N400 is a negative-going event-related potential (ERP) component elicited by meaningful stimuli, most frequently words, and it is sensitive to how well a stimulus fits its semantic context @Kutas_ThirtyYearsCounting_2011. Its polarity is negative and typically begins around 200 to 250 ms after stimulus onset and peaks at about 400 ms and returns toward baseline by 500 to 600 ms @junge_DevelopmentN400Word_2021. The topography is centro-parietal, with the largest amplitudes at midline sites such as Cz and Pz and typically a right-hemisphere bias is observed for words presented visually @Kutas_ThirtyYearsCounting_2011. Based on this, @kappenman_ERP_CORE_2021 measured the N400 at the centro-parietal midline electrode CPz, in a 300 to 500 ms window. They quantified it as a difference wave, where the N400 effect is the more negative response to semantically unrelated words compared with related words.
 
 ### Literature Review
 
+
+
 ## Methods
 
-Complete the following subsections using the information from @kappenman_ERP_Core_2021. Don't forget to mention that the data are from the ERP CORE resource under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). 
+Complete the following subsections using the information from @kappenman_ERP_CORE_2021. Don't forget to mention that the data are from the ERP CORE resource under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). 
 
 ### Participants
 
@@ -67,7 +66,7 @@ Describe the EEG recording parameters: amplifier and type of cap used, electrode
 
 ### Analysis parameters
 
-Choose these parameters appropriate for the component that you are analysing. Use those recommended by @kappenman_ERP_Core_2021; see their Table 1. This holds for all parameters except for the filter parameters; for these, you can stick to the example parameters provided below.
+Choose these parameters appropriate for the component that you are analysing. Use those recommended by @kappenman_ERP_CORE_2021; see their Table 1. This holds for all parameters except for the filter parameters; for these, you can stick to the example parameters provided below.
 Describe the parameters in this section and also modify the code accordingly
 
 #### Preprocessing parameters
@@ -186,9 +185,9 @@ for cond in CONDITIONS:
 
 ### Grand average: expected effect
 
-Plot the electrode deemed most representative for the effect by @kappenman_ERP_Core_2021.
+Plot the electrode deemed most representative for the effect by @kappenman_ERP_CORE_2021.
 Set the parameters for the specified analysis window, which will include dotted vertical lines marking the analysis window on the plot.
-Note: for some components, @kappenman_ERP_Core_2021 refer to two electrode sites. If this is the case for your chosen component, the analysis requires a consideration of lateralisation; please make an appointment to discuss the required analysis tweaks with Ina.
+Note: for some components, @kappenman_ERP_CORE_2021 refer to two electrode sites. If this is the case for your chosen component, the analysis requires a consideration of lateralisation; please make an appointment to discuss the required analysis tweaks with Ina.
 
 ```{python}
 selected_electrode = "CPz"
@@ -203,7 +202,7 @@ plot_evokeds(grand_avs, picks = selected_electrode, invert_y = True, title = plo
 
 ## Discussion and reflection
 
-Provide a brief discussion of the effect that you observed. Were you able to replicate the ERP component as observed by @kappenman_ERP_Core_2021? If not, what was different in your grand average ERP? 
+Provide a brief discussion of the effect that you observed. Were you able to replicate the ERP component as observed by @kappenman_ERP_CORE_2021? If not, what was different in your grand average ERP? 
 
 What did you learn by applying the analysis process to a new dataset?
 
