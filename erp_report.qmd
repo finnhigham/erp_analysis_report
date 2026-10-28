@@ -8,7 +8,7 @@ format:
         toc: true
         toc-depth: 3
         code-fold: true
-        theme: flatly # adapt this to a theme of your choice if you'd like
+        theme: journal
 execute:
     warning: false
     message: false
