@@ -1,6 +1,6 @@
 ---
-title: "ERP analysis report (customise title to fit your topic)"
-author: "Your name"
+title: "ERP analysis report (N400)"
+author: "Finn Higham"
 date: today
 format: 
     html:
@@ -40,15 +40,20 @@ PROCESSED_PATH = Path("data/processed")
 Provide an introduction to the ERP component of your choice here. This should include a brief literature review -- see report instructions for details.
 Use appropriate subheadings as required: adapt the ones below, create new ones or delete as needed.
 
-### Intro subheading 1
+### Description of N400's Characteristics
 
-### Intro subheading 2
+### Literature Review
 
 ## Methods
 
 Complete the following subsections using the information from @kappenman2021. Don't forget to mention that the data are from the ERP CORE resource under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). 
 
 ### Participants
+
+```{python}
+# Participants to exclude
+EXCLUDE = ["030", "040"]
+```
 
 Provide information on the number of participants and their demographics (sex, age, handedness) as well as the inclusion criteria for the study.
 
@@ -84,12 +89,12 @@ REFERENCE = ["P9","P10"]
 
 ```{python}
 TMIN = -0.2 # epoch start relative to critical event
-TMAX = 1.0  # epoch end relative to critical event
+TMAX = 0.8  # epoch end relative to critical event
 
 BASELINE = (-0.2,0) # baseline interval
 
-# critical conditions for averaging and epoching
-CONDITIONS = ["stimulus/compatible", "stimulus/incompatible"]
+# critical conditions for averaging and epoching relevant to N400 component
+CONDITIONS = ["stimulus/target_word/related", "stimulus/target_word/unrelated"]
 
 REJECT = {
     "eeg": 150e-6,
@@ -103,7 +108,7 @@ REJECT = {
 ### Preprocessing
 
 ```{python}
-#| eval: true # set this to false if you don't want preprocessing to recompute
+#| eval: false # set this to false if you don't want preprocessing to recompute
 #| output: false # this suppresses any output
 
 for raw_file in RAW_PATH.glob("*_raw.fif.gz"):
@@ -139,6 +144,15 @@ for cond in CONDITIONS:
 
 for processed_file in PROCESSED_PATH.glob("*_raw.fif.gz"):
     
+    # extract subject number
+    subj_ID = processed_file.stem.split("_")[0]
+
+    # check if participant should be excluded
+    if subj_ID in EXCLUDE:
+        # if participant is in list skip the rest for this participant
+        # and move onto the next
+        continue
+
     # read in preprocessed file
     processed = SimpleRaw(processed_file)
 
@@ -177,10 +191,10 @@ Set the parameters for the specified analysis window, which will include dotted 
 Note: for some components, @kappenman2021 refer to two electrode sites. If this is the case for your chosen component, the analysis requires a consideration of lateralisation; please make an appointment to discuss the required analysis tweaks with Ina.
 
 ```{python}
-selected_electrode = "FCz"
-plot_title = "Grand average for N2: Incompatible versus compatible Flanker stimuli"
-analysis_window_start = 0.2
-analysis_window_end = 0.4
+selected_electrode = "CPz"
+plot_title = "Grand average for N400: Related versus Unrelated Words"
+analysis_window_start = 0.3
+analysis_window_end = 0.5
 
 plot_evokeds(grand_avs, picks = selected_electrode, invert_y = True, title = plot_title, vlines = [analysis_window_start, analysis_window_end])
 
