@@ -207,6 +207,10 @@ Provide a brief discussion of the effect that you observed. Were you able to rep
 
 What did you learn by applying the analysis process to a new dataset?
 
+## Declaration of Generative AI Use
+
+Generative AI was used to produce certain aspects of this assessment;the system used was Claude; and it was utilised to troubleshoot errors in code. It typically prompted me to run certain blocks of code in the console that would isolate what was or was not happening to provide the error, usually by printing certain variables. It was not used to generate any chunks of code.
+
 ## References
 
 *Note: this document is set up to automatically generate a reference list via a bib file. We will look at how to do this in the week 9 workshop.*
