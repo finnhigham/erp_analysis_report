@@ -78,6 +78,8 @@ The continuous EEG was recorded with a BioSemi ActiveTwo system using active ele
 
 #### Preprocessing parameters
 
+Following @kappenman_ERP_CORE_2021, the EEG was re-referenced offline to the average of P9 and P10, due to their proximity to the mastoids. The data were band-pass filtered between 0.1 Hz and 30 Hz.
+
 ```{python}
 
 FILTER_SETTINGS = {
@@ -91,6 +93,8 @@ REFERENCE = ["P9","P10"]
 ```
 
 #### Epoching parameters
+
+The parameters utilised here for the N400 mimic those specified by @kappenman_ERP_CORE_202. The stimulus-locked epochs from -200 ms to 800 ms with a baseline of -200 to 0 ms, measured at CPz (specified later). The epochs were averaged separately for the related and unrelated target-word conditions, and when the EEG exceeded ±150 µV or the EOG exceeded ±250 µV they were rejected.
 
 ```{python}
 TMIN = -0.2 # epoch start relative to critical event
