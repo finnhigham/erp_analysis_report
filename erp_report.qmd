@@ -119,7 +119,7 @@ REJECT = {
 Each participant's raw EEG file was downloaded and passed through a custom preprocessing function. The functions re-referenced the data to the average of P9 and P10 and applied a 0.1 to 30 Hz band-pass filter, following the parameters outlined previously. The preprocessed recordings were saved into a seperate folder to avoid the process repeating every run.
 
 ```{python}
-#| eval: false # set this to false if you don't want preprocessing to recompute
+#| eval: true # set this to false if you don't want preprocessing to recompute
 #| output: false # this suppresses any output
 
 for raw_file in RAW_PATH.glob("*_raw.fif.gz"):
@@ -216,9 +216,9 @@ plot_evokeds(grand_avs, picks = selected_electrode, invert_y = True, title = plo
 
 ## Discussion and reflection
 
-Provide a brief discussion of the effect that you observed. Were you able to replicate the ERP component as observed by @kappenman_ERP_CORE_2021? If not, what was different in your grand average ERP? 
+The grand average at CPz showed the expected N400 semantic relatedness effect. From around 300 ms after target onset, unrelated words elicited a more negative-going waveform than related words, and the two waveforms remained separated through the 300 to 500 ms analysis window. Based on the plot, the difference was roughly 6 to 8 µV, which aligns with @kappenman_ERP_CORE_2021, who reported a mean N400 difference-wave amplitude of around -7.6 µV at CPz. The polarity, timing and electrode side of the effect were therefore replicated, however, this comparison is limited because the two waveforms are plotted individually rather than the unrelated-minus-related difference wave that ERP CORE displayed. There was a difference in the pipelines utilised. The fixed rejection threshold and a 30 Hz low-pass filter was used which did not mirror the ERP CORE. There was also only 38 participants used rather than 39 participants due to the rejection artifacts. Any of these changes could alter the absolute amplitudes.
 
-What did you learn by applying the analysis process to a new dataset?
+Applying the pipeline to a new dataset has taught me how much depends on the specific parameters relevant to each component. My first attempt at using this pipeline for the N400 I tried the tags stimulus/related and stimulus/unrelated, which meant the prime words were being matched also. This caused mixed trials and did not provide any relevant information. I think showed to me how useful an open and collaborative space would be in the field of coding, because through a few small alterations (which would take less time the more I would do it) I was able to replicate this pipeline for an entirely new set of data and participants. I found this process extremely rewarding and thought-provoking because it challenged me to think and try troubleshoot errors based on the traceback.
 
 ## Declaration of Generative AI Use
 
