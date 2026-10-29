@@ -116,6 +116,8 @@ REJECT = {
 
 ### Preprocessing
 
+Each participant's raw EEG file was downloaded and passed through a custom preprocessing function. The functions re-referenced the data to the average of P9 and P10 and applied a 0.1 to 30 Hz band-pass filter, following the parameters outlined previously. The preprocessed recordings were saved into a seperate folder to avoid the process repeating every run.
+
 ```{python}
 #| eval: false # set this to false if you don't want preprocessing to recompute
 #| output: false # this suppresses any output
@@ -141,6 +143,8 @@ for raw_file in RAW_PATH.glob("*_raw.fif.gz"):
 ```
 
 ### Epoching and averaging
+
+The preprocessed files were loaded for each participant, outside of the two excluded (030 and 040). Events were extracted from each recording, and the continuous data was cut into epochs as per the parameters mentioned previously.
 
 ```{python}
 #| output: false
@@ -180,6 +184,8 @@ for processed_file in PROCESSED_PATH.glob("*_raw.fif.gz"):
 
 ### Grand average
 
+The single-participant averages were then averaged across the 38 included participants, providing one grand-average ERP per condition for plotting.
+
 ```{python}
 #| output: false
 
@@ -195,13 +201,11 @@ for cond in CONDITIONS:
 
 ### Grand average: expected effect
 
-Plot the electrode deemed most representative for the effect by @kappenman_ERP_CORE_2021.
-Set the parameters for the specified analysis window, which will include dotted vertical lines marking the analysis window on the plot.
-Note: for some components, @kappenman_ERP_CORE_2021 refer to two electrode sites. If this is the case for your chosen component, the analysis requires a consideration of lateralisation; please make an appointment to discuss the required analysis tweaks with Ina.
+At CPz, unrelated target words elicited a response more negative-going than the related target words, beginning around 250 to 300 ms and continuing through the 300 to 500 ms analysis window. Negative is plotted upwards. Dash vertical lines mark the analysis window of 300 to 500 ms recommended by @kappenman_ERP_CORE_2021.
 
 ```{python}
 selected_electrode = "CPz"
-plot_title = "Grand average for N400: Related versus Unrelated Words"
+plot_title = "Grand average ERPs at CPz (N = 38)"
 analysis_window_start = 0.3
 analysis_window_end = 0.5
 
