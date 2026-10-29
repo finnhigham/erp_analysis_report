@@ -68,7 +68,7 @@ EXCLUDE = ["030", "040"]
 
 ### Procedure
 
-Describe the task that participants completed. This should be tailored to the task / component that you chose to analyse.
+The N400 was elicited with a word pair judgement task adapted from @holcomb_AuditoryVisualSemantic_1990. On each trial, a red prime word was presented followed by a green target word, and participants responded by a button press depending on if the target word was semantically related or unrelated to the prime. For example, CAR followed by TRUCK is a related pair, and BANANA followed by KEYBOARD is an unrelated pair. Each target word was presented twice during the task, once preceded by an associated prime and once by an associated prime, with the order being full randomised. The number of trials per condition was 60 for related and unrelated word pairs, meaning the total number of trials was 120. The stimulus for the prime and target word was equal at 200 ms, and an average of 1000ms was provided between words and 1500ms between trials. The task was run in 1 continuous block of 120 trials with participants afforded a short break every 20 trials within that block. Trials with reaction times outside 200 to 1500 ms after target onset, or incorrect  responses, were excluded in the original analysis. 
 
 ### EEG recording
 
@@ -89,7 +89,6 @@ FILTER_SETTINGS = {
 }
 
 # This setting re-references to averaged mastoids (P9/P10 as proxy) 
-# To use an average reference, replace ["P9", "P10"] with None 
 REFERENCE = ["P9","P10"]
 
 ```
@@ -218,7 +217,7 @@ What did you learn by applying the analysis process to a new dataset?
 
 ## Declaration of Generative AI Use
 
-Generative AI was used to produce certain aspects of this assessment;the system used was Claude; and it was utilised to troubleshoot errors in code. It typically prompted me to run certain blocks of code in the console that would isolate what was or was not happening to provide the error, usually by printing certain variables. It was not used to generate any chunks of code.
+Generative AI was used to troubleshoot certain aspects of this assessment;the system used was Claude; and it was utilised to fix and provide reason for errors in code. It typically prompted me to run certain blocks of code in the console that would isolate what was or was not happening to provide the error, usually by printing certain variables. It was not used to generate any chunks of code that are in the final script.
 
 ## References
 
