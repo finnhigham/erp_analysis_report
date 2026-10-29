@@ -57,9 +57,9 @@ The data analysed here come from the ERP CORE resource [@kappenman_ERP_CORE_2021
 
 ### Participants
 
-The ERP CORE sample consisted of 40 neurotypical participants (25 females, 15 males; mean age 21.5 years, *SD* = 2.87, range 18 to 30; 38 right-handed and 2 left-handed) from the University of California, Davis community. All participants had native English competence and normal colour perception, normal or corrected-to-norma vision, and no self-reported history of neurological disease or injury. The study was approved by the UC Davis Institutional Review Board and informed consent was provided. Participants received $10 per hour throughout the trial.
+The ERP CORE sample consisted of 40 neurotypical participants (25 females, 15 males; mean age 21.5 years, *SD* = 2.87, range 18 to 30; 38 right-handed and 2 left-handed) from the University of California, Davis community [@kappenman_ERP_CORE_2021]. All participants had native English competence and normal colour perception, normal or corrected-to-norma vision, and no self-reported history of neurological disease or injury. The study was approved by the UC Davis Institutional Review Board and informed consent was provided. Participants received $10 per hour throughout the trial.
 
-In the original study, participants were excluded from a given task if artifacts affected more than 25% of trials, if fewer than 50% of trials remained in any single condition, or if accuracy was below 75%. For the N400, this resulted in 39 participants. In the present analysis, the sample was reduced to 38, with two participants (030 and 040) being excluded from the full sample. Participant 040 was removed as over 25% of trials were rejected due to artifact and less than 50% of trials remained after artifact rejection. For, Participant 030, the rejection conditions meant 314 of 362 epochs were dropped, leaving 1 related and 0 unrelated target epochs. Large blink artifacts are the cause of these rejections, but @kappenman_ERP_CORE_2021 corrected blinks through Independent Component Analysis(ICA), and this pipeline does not. The final sample therefore comprised 38 participants (24 females, 14 males; mean age 21.5, *SD* = 2.94, range 18 to 30; 36 right-handed and 2 left-handed).
+In the original study, participants were excluded from a given task if artifacts affected more than 25% of trials, if fewer than 50% of trials remained in any single condition, or if accuracy was below 75% [@kappenman_ERP_CORE_2021]. For the N400, this resulted in 39 participants. In the present analysis, the sample was reduced to 38, with two participants (030 and 040) being excluded from the full sample. Participant 040 was removed as over 25% of trials were rejected due to artifact and less than 50% of trials remained after artifact rejection. For, Participant 030, the rejection conditions meant 314 of 362 epochs were dropped, leaving 1 related and 0 unrelated target epochs. Large blink artifacts are the cause of these rejections, but @kappenman_ERP_CORE_2021 corrected blinks through Independent Component Analysis(ICA), and this pipeline does not. The final sample therefore comprised 38 participants (24 females, 14 males; mean age 21.5, *SD* = 2.94, range 18 to 30; 36 right-handed and 2 left-handed).
 
 ```{python}
 # Participants to exclude based on artifacts
@@ -72,12 +72,9 @@ The N400 was elicited with a word pair judgement task adapted from @holcomb_Audi
 
 ### EEG recording
 
-Describe the EEG recording parameters: amplifier and type of cap used, electrode positions, CMS / DRL electrode positions, EOG electrode positions, and filter parameters.
+The continuous EEG was recorded with a BioSemi ActiveTwo system using active electrodes. Thirty scalp electrodes were mounted in an elastic cap and placed according to the International 10/20 system (FP1, F3, F7, FC3, C3, C5, P3, P7, P9, PO7, PO3, O1, Oz, Pz, CPz, FP2, Fz, F4, F8, FC4, FCz, Cz, C4, C6, P4, P8, P10, PO8, PO4, O2). The common mode sense (CMS) electrode was at PO1 and the driven right leg (DRL) electrode at PO2. The horizontal EOG was recorded from electrodes lateral to the external canthus of each eye, and the vertical EOG from an electrode below the right eye. Signals were low-pass filtered with a fifth-order sinc filter (half-power cutoff 204.8 Hz) and digitised at 1024 Hz with 24-bit resolution. All signals were recorded in single-ended mode, meaning references was done offline. The filtering for the present analysis on N400 is described below.
 
 ### Analysis parameters
-
-Choose these parameters appropriate for the component that you are analysing. Use those recommended by @kappenman_ERP_CORE_2021; see their Table 1. This holds for all parameters except for the filter parameters; for these, you can stick to the example parameters provided below.
-Describe the parameters in this section and also modify the code accordingly
 
 #### Preprocessing parameters
 
@@ -218,8 +215,4 @@ What did you learn by applying the analysis process to a new dataset?
 ## Declaration of Generative AI Use
 
 Generative AI was used to troubleshoot certain aspects of this assessment;the system used was Claude; and it was utilised to fix and provide reason for errors in code. It typically prompted me to run certain blocks of code in the console that would isolate what was or was not happening to provide the error, usually by printing certain variables. It was not used to generate any chunks of code that are in the final script.
-
-## References
-
-*Note: this document is set up to automatically generate a reference list via a bib file. We will look at how to do this in the week 9 workshop.*
 
